@@ -1,0 +1,35 @@
+.body{
+    font-family:Georgia, 'Times New Roman', Times, serif
+    padding-bottom: 500px;
+}
+
+#content-body {
+    margin-top: 50px;
+    border: 1px solid rgb(236, 180, 58);
+    border-radius: 15px;
+    padding-top: 20px;
+
+  /*  box-shadow: 0px 0px 5px 0px rgb(236, 180, 58);*/
+}
+
+.sidebar{
+    background-color: rgb(236, 180, 58);
+    padding:20px 10px 20px;
+    height:100vh;
+    border-radius: 0 15px 15px 0;
+
+}
+
+.sidebar a {
+    color: white !important;
+    text-decoration: none;
+
+}
+
+.sidebar a:hover {
+    color: rgb(236, 180, 58) !important;
+    background-color: white;
+    border-radius: 180px;
+    box-shadow: 0px 0px 10px 0px rgb(236, 180, 58);
+
+}
