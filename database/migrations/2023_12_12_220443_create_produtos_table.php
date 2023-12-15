@@ -16,8 +16,8 @@ return new class extends Migration
             $table->String('nome');
             $table->String('descricao');
             $table->float('preco');
-            $table->integer('quantidade');
-            $table->float('limitePeso');
+            $table->float('pesoEstoque');
+            $table->float('pesoLimite');
             $table->String('validade');
             $table->integer('categoria_id');
             $table->String('imagem');

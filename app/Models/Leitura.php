@@ -12,16 +12,11 @@ class Leitura extends Model
         protected $fillable = [
             'dataLeitura',
             'horaLeitura',
-            'sensor_id',
             'mac_id',
         ];
         public function mac()
     {
         return $this->belongsTo(Mac::class, 'mac_id', 'id');
-    }
-    public function sensor()
-    {
-        return $this->belongsTo(Sensor::class, 'sensor_id', 'id');
     }
     use HasFactory;
 }

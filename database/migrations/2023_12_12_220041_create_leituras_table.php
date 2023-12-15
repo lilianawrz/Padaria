@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('leituras', function (Blueprint $table) {
             $table->id();
-            $table->integer('sensor_id');
             $table->integer('mac_id');
             $table->String('dataLeitura');
             $table->String('horaLeitura');

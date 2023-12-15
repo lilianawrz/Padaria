@@ -15,7 +15,10 @@ use App\Http\Controllers\ProdutoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
+});
+Route::get('dashboard', function () {
+    return view('dashboard');
 });
 
 // Rotas para listar e exibir detalhes dos produtos

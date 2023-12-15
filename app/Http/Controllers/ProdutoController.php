@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Response;
+
 
 class ProdutoController extends Controller
 {
@@ -41,8 +43,8 @@ class ProdutoController extends Controller
             'nome' => 'required',
             'descricao' => 'required',
             'preco' => 'required|numeric',
-            'quantidade' => 'required|integer',
             'limitePeso' => 'required|numeric',
+            'pesoEstoque' => 'required|numeric',
             'validade' => 'required|date',
             'categoria_id' => 'required|integer',
             'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -66,8 +68,12 @@ class ProdutoController extends Controller
     public function show($id)
     {
         $produto = Produto::findOrFail($id);
-        return view('produtos.show')->with(['produto' => $produto]);
 
+        if (request()->ajax()) {
+            return Response::json(['produto' => $produto]);
+        }
+
+        return view('produtos.show', compact('produto'));
     }
 
     /**
@@ -91,8 +97,8 @@ class ProdutoController extends Controller
             'nome' => 'required',
             'descricao' => 'required',
             'preco' => 'required|numeric',
-            'quantidade' => 'required|integer',
-            'limitePeso' => 'required|numeric',
+            'pesoEstoque' => 'required|numeric',
+            'pesoLimite' => 'required|numeric',
             'validade' => 'required|date',
             'categoria_id' => 'required|integer',
             'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

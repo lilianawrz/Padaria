@@ -30,7 +30,7 @@
                 @foreach($produto as $produto)
                     <tr>
                         <td>{{ $produto->nome }}</td>
-                        <td></td>
+                        <td>{{$produto->pesoEstoque}}</td>
                         <td>
                             <a href="{{ route('produtos.show', $produto->id) }}" class="btn btn-info btn-sm"> <i class="bi bi-eye"></i></a>
                         </td>
@@ -39,5 +39,6 @@
             </tbody>
         </table>
     </div>
+    <meta http-equiv="refresh" content="5">
 
 @endsection
